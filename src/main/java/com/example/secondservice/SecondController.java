@@ -17,8 +17,13 @@ public class SecondController {
     }
 
     @GetMapping("/message")
-    public String message(@RequestHeader("first-request") String header){
+    public String message(@RequestHeader("second-request") String header){
         log.info(header);
-        return "hello world in first service";
+        return "hello world in second service";
+    }
+
+    @GetMapping("/check")
+    public String check(){
+        return "Hi there second";
     }
 }
